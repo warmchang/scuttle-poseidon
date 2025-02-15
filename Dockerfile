@@ -1,8 +1,8 @@
-FROM docker.io/golang:1.23.4 AS builder
+FROM docker.io/golang:1.24.0 AS builder
 COPY . src
 RUN cd src && make build
 
-FROM docker.io/alpine:3.21.2
+FROM docker.io/alpine:3.21.3
 LABEL maintainer="Dalton Hubble <dghubble@gmail.com>"
 LABEL org.opencontainers.image.title="scuttle",
 LABEL org.opencontainers.image.source="https://github.com/poseidon/scuttle"
